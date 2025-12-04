@@ -6,7 +6,6 @@ import pandas as pd
 
 
 def calculate_bonus(salary, bonus_rate=0.15):
-    """محاسبه پاداش"""
     return salary * bonus_rate
 
 
@@ -18,7 +17,6 @@ def main():
         bonus = calculate_bonus(salary)
         total_compensation = salary + bonus
 
-        # ایجاد گزارش
         compensation_data = {
             'Item': ['Base Salary', 'Bonus (15%)', 'Total Compensation'],
             'Amount': [salary, bonus, total_compensation],
@@ -29,7 +27,6 @@ def main():
         print("\nگزارش حقوق و پاداش:")
         print(df.to_string(index=False))
 
-        # تحلیل برای سطوح مختلف حقوق
         salary_levels = [salary * 0.7, salary, salary * 1.3, salary * 1.6]
         analysis = []
 

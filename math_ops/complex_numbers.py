@@ -7,16 +7,13 @@ import cmath
 
 
 class ComplexNumberOperations:
-    """عملیات روی اعداد مختلط"""
 
     @staticmethod
     def create_complex(real, imag):
-        """ایجاد عدد مختلط"""
         return complex(real, imag)
 
     @staticmethod
     def complex_operations(z1, z2):
-        """انجام عملیات مختلف روی اعداد مختلط"""
         return {
             'Addition': z1 + z2,
             'Subtraction': z1 - z2,
@@ -39,7 +36,6 @@ def main():
         real2 = float(input("قسمت حقیقی عدد دوم: "))
         imag2 = float(input("قسمت موهومی عدد دوم: "))
 
-        # ایجاد اعداد مختلط
         ops = ComplexNumberOperations()
         z1 = ops.create_complex(real1, imag1)
         z2 = ops.create_complex(real2, imag2)
@@ -47,14 +43,12 @@ def main():
         print(f"\nعدد اول: {z1}")
         print(f"عدد دوم: {z2}")
 
-        # انجام عملیات
         results = ops.complex_operations(z1, z2)
 
         print("\nنتایج عملیات:")
         for operation, result in results.items():
             print(f"{operation}: {result}")
 
-        # نمایش در صفحه مختلط
         points = np.array([[z1.real, z1.imag], [z2.real, z2.imag],
                            [(z1 + z2).real, (z1 + z2).imag]])
 

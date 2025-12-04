@@ -7,7 +7,6 @@ import pandas as pd
 
 
 def calculate_acceleration(initial_velocity, final_velocity, time_minutes):
-    """محاسبه شتاب"""
     time_seconds = time_minutes * 60  # تبدیل به ثانیه
     return (final_velocity - initial_velocity) * 60 / time_minutes
 
@@ -22,7 +21,6 @@ def main():
         acceleration = calculate_acceleration(x, k, n)
         print(f"شتاب: {acceleration:.2f} km/h²")
 
-        # تحلیل حرکت
         time_points = np.linspace(0, n, 10)  # 10 نقطه زمانی
         velocities = x + (acceleration / 60) * time_points  # سرعت در هر لحظه
 

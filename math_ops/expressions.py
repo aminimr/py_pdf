@@ -7,16 +7,13 @@ import math
 
 
 class ExpressionCalculator:
-    """ماشین حساب عبارات ریاضی"""
 
     @staticmethod
     def expression1(x, y):
-        """محاسبه x³ + 2x² + 3y - 5"""
         return x ** 3 + 2 * x ** 2 + 3 * y - 5
 
     @staticmethod
     def expression2(m, n):
-        """محاسبه m² - n², 2mn, m² + n²"""
         a = m ** 2 - n ** 2
         b = 2 * m * n
         c = m ** 2 + n ** 2
@@ -24,7 +21,6 @@ class ExpressionCalculator:
 
     @staticmethod
     def expression3(a, b):
-        """محاسبه a² + b² و a³ + b³"""
         sum_squares = a ** 2 + b ** 2
         sum_cubes = a ** 3 + b ** 3
         return sum_squares, sum_cubes
@@ -35,13 +31,11 @@ def main():
     calc = ExpressionCalculator()
 
     try:
-        # عبارت اول
         x = float(input("مقدار x: "))
         y = float(input("مقدار y: "))
         result1 = calc.expression1(x, y)
         print(f"x³ + 2x² + 3y - 5 = {result1}")
 
-        # عبارت دوم (فیثاغورث)
         m = float(input("\nمقدار m: "))
         n = float(input("مقدار n: "))
         a, b, c = calc.expression2(m, n)
@@ -49,18 +43,15 @@ def main():
         print(f"b = 2mn = {b}")
         print(f"c = m² + n² = {c}")
 
-        # بررسی قضیه فیثاغورث
         pythagorean_check = abs(a ** 2 + b ** 2 - c ** 2) < 1e-10
         print(f"بررسی فیثاغورث: a² + b² = c² -> {pythagorean_check}")
 
-        # عبارت سوم
         a_val = float(input("\nمقدار a برای عبارت سوم: "))
         b_val = float(input("مقدار b برای عبارت سوم: "))
         squares, cubes = calc.expression3(a_val, b_val)
         print(f"a² + b² = {squares}")
         print(f"a³ + b³ = {cubes}")
 
-        # تحلیل ریاضی
         print("\nتحلیل ریاضی:")
         print(f"(a + b)² = {(a_val + b_val) ** 2}")
         print(f"(a + b)³ = {(a_val + b_val) ** 3}")

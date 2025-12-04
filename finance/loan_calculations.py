@@ -7,11 +7,9 @@ import pandas as pd
 
 
 class LoanCalculator:
-    """ماشین حساب وام"""
 
     @staticmethod
     def calculate_loan(principal, annual_rate, months):
-        """محاسبه وام با بهره"""
         monthly_rate = annual_rate / 1200  # تبدیل به نرخ ماهانه
         total_interest = principal * (months + 1) * monthly_rate
         total_payment = principal + total_interest

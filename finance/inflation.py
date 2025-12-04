@@ -7,13 +7,11 @@ import pandas as pd
 
 
 def calculate_inflation(price_year1, price_year2):
-    """محاسبه نرخ تورم"""
     inflation_rate = (price_year2 - price_year1) / price_year1
     return inflation_rate
 
 
 def predict_future_price(current_price, inflation_rate, years):
-    """پیش‌بینی قیمت آینده"""
     return current_price * (1 + inflation_rate) ** years
 
 
@@ -26,7 +24,6 @@ def main():
         inflation = calculate_inflation(y1, y2)
         print(f"نرخ تورم: {inflation:.2%}")
 
-        # پیش‌بینی برای سال‌های آینده
         years = int(input("تعداد سال برای پیش‌بینی: "))
 
         future_prices = []

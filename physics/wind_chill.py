@@ -6,7 +6,6 @@ import numpy as np
 
 
 def calculate_wind_chill(temperature, wind_speed):
-    """محاسبه شاخص سرمایش باد"""
     wci = 13.12 + 0.6215 * temperature - 11.37 * (wind_speed ** 0.16) + 0.3965 * temperature * (wind_speed ** 0.16)
     return round(wci)
 
@@ -20,7 +19,6 @@ def main():
         wind_chill = calculate_wind_chill(temperature, wind_speed)
         print(f"شاخص سرمایش باد: {wind_chill}")
 
-        # تحلیل حساسیت با numpy
         temps = np.array([-10, 0, 10, 20])
         winds = np.array([10, 20, 30, 40])
 

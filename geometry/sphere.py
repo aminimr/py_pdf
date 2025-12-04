@@ -7,7 +7,6 @@ import math
 
 
 def calculate_sphere_properties(radius):
-    """محاسبه مساحت و حجم کره"""
     surface_area = 4 * math.pi * radius ** 2
     volume = (4 / 3) * math.pi * radius ** 3
     return surface_area, volume
@@ -22,7 +21,6 @@ def main():
         print(f"مساحت سطح کره: {surface_area:.2f}")
         print(f"حجم کره: {volume:.2f}")
 
-        # استفاده از numpy برای محاسبات برداری
         radii = np.array([radius, radius / 2, radius * 2])
         surface_areas = 4 * math.pi * radii ** 2
         volumes = (4 / 3) * math.pi * radii ** 3

@@ -12,11 +12,9 @@ import pandas as pd
 
 
 class SystemInfo:
-    """کلاس برای دریافت اطلاعات سیستم"""
 
     @staticmethod
     def get_system_info():
-        """اطلاعات سیستم عامل"""
         return {
             'System': platform.system(),
             'Release': platform.release(),
@@ -27,7 +25,6 @@ class SystemInfo:
 
     @staticmethod
     def get_python_info():
-        """اطلاعات پایتون"""
         return {
             'Version': platform.python_version(),
             'Implementation': platform.python_implementation(),
@@ -37,7 +34,6 @@ class SystemInfo:
 
     @staticmethod
     def get_hardware_info():
-        """اطلاعات سخت‌افزار"""
         return {
             'CPU Count': multiprocessing.cpu_count(),
             'Machine': platform.machine(),
@@ -47,7 +43,6 @@ class SystemInfo:
 
     @staticmethod
     def get_environment_info():
-        """اطلاعات محیطی"""
         return {
             'Current Directory': os.getcwd(),
             'User': os.getenv('USERNAME') or os.getenv('USER'),
@@ -59,13 +54,11 @@ def main():
     print("\n--- System Information ---")
     sys_info = SystemInfo()
 
-    # جمع‌آوری اطلاعات
     system_data = sys_info.get_system_info()
     python_data = sys_info.get_python_info()
     hardware_data = sys_info.get_hardware_info()
     environment_data = sys_info.get_environment_info()
 
-    # نمایش اطلاعات
     print("\n=== اطلاعات سیستم عامل ===")
     for key, value in system_data.items():
         print(f"{key}: {value}")
@@ -82,12 +75,10 @@ def main():
     for key, value in environment_data.items():
         print(f"{key}: {value}")
 
-    # اطلاعات اضافی
     print(f"\nاطلاعات اضافی:")
     print(f"اندازه اشاره‌گر: {struct.calcsize('P') * 8} بیت")
     print(f"ماژول‌های سایت: {len(sys.path)} مسیر")
 
-    # ایجاد گزارش جامع
     all_info = {**system_data, **python_data, **hardware_data, **environment_data}
     info_df = pd.DataFrame(list(all_info.items()), columns=['Property', 'Value'])
 

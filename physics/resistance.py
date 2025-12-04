@@ -6,12 +6,10 @@ import numpy as np
 
 
 def parallel_resistance(resistances):
-    """محاسبه مقاومت معادل موازی"""
     return 1 / sum(1 / r for r in resistances)
 
 
 def series_resistance(resistances):
-    """محاسبه مقاومت معادل سری"""
     return sum(resistances)
 
 
@@ -31,7 +29,6 @@ def main():
         print(f"مقاومت معادل موازی: {parallel_eq:.2f} Ω")
         print(f"مقاومت معادل سری: {series_eq:.2f} Ω")
 
-        # تحلیل ترکیبات مختلف
         combinations = [
             [r1, r2],
             [r1, r3],

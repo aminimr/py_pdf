@@ -7,12 +7,10 @@ import math
 
 
 def calculate_series(x, n_terms=10):
-    """محاسبه سری 1/(x² + x + 1)"""
     return 1.0 / (x * x + x + 1)
 
 
 def factorial_series(n_terms):
-    """محاسبه سری فاکتوریل: 1/1! + 1/2! + ... + 1/n!"""
     total = 0
     fact = 1
 
@@ -27,22 +25,18 @@ def main():
     print("\n--- Mathematical Series ---")
 
     try:
-        # سری اول
         x = float(input("مقدار x برای سری اول: "))
         result1 = calculate_series(x)
         print(f"نتیجه سری 1/(x²+x+1): {result1}")
 
-        # سری فاکتوریل
         n = int(input("تعداد جملات سری فاکتوریل: "))
         result2 = factorial_series(n)
         print(f"نتیجه سری فاکتوریل: {result2}")
 
-        # محاسبه خطا
         actual_e = math.e - 1  # e^1 - 1 ≈ سری فاکتوریل برای n بزرگ
         error = abs(actual_e - result2)
         print(f"خطای تقریب: {error:.10f}")
 
-        # تحلیل همگرایی
         convergence = []
         for terms in range(1, min(n + 1, 11)):  # تا 10 جمله اول
             partial_sum = factorial_series(terms)

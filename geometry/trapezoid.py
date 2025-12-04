@@ -6,7 +6,6 @@ import numpy as np
 
 
 def trapezoid_area(base1, base2, height):
-    """محاسبه مساحت ذوزنقه"""
     return 0.5 * (base1 + base2) * height
 
 
@@ -20,10 +19,8 @@ def main():
         area = trapezoid_area(a, b, c)
         print(f"مساحت ذوزنقه: {area:.2f}")
 
-        # محاسبات پیشرفته
         import pandas as pd
 
-        # تحلیل حساسیت
         heights = np.array([c * 0.5, c, c * 1.5, c * 2])
         areas = [trapezoid_area(a, b, h) for h in heights]
 

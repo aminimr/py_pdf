@@ -7,7 +7,6 @@ import math
 
 
 def regular_polygon_area(n_sides, side_length):
-    """محاسبه مساحت چندضلعی منتظم"""
     return (n_sides * side_length ** 2) / (4 * math.tan(math.pi / n_sides))
 
 
@@ -20,8 +19,7 @@ def main():
         area = regular_polygon_area(n_sides, side_length)
         print(f"مساحت چندضلعی: {area:.2f}")
 
-        # تحلیل برای چندضلعی‌های مختلف
-        polygons = [3, 4, 5, 6, 8, n_sides]  # مثلث، مربع، پنج‌ضلعی، شش‌ضلعی، هشت‌ضلعی
+        polygons = [3, 4, 5, 6, 8, n_sides]
         areas = []
 
         for sides in polygons:

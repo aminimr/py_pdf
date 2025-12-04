@@ -6,11 +6,9 @@ import numpy as np
 import pandas as pd
 
 class AdvancedSeries:
-    """سری‌های ریاضی پیشرفته"""
 
     @staticmethod
     def fibonacci(n):
-        """تولید n جمله اول دنباله فیبوناچی"""
         if n <= 0:
             return []
         elif n == 1:
@@ -25,7 +23,6 @@ class AdvancedSeries:
 
     @staticmethod
     def perfect_numbers(limit):
-        """پیدا کردن اعداد کامل تا حد مشخص"""
         perfects = []
         for num in range(2, limit + 1):
             divisors = [i for i in range(1, num) if num % i == 0]
@@ -35,12 +32,10 @@ class AdvancedSeries:
 
     @staticmethod
     def arithmetic_series(first, difference, n):
-        """سری حسابی"""
         return [first + i * difference for i in range(n)]
 
     @staticmethod
     def geometric_series(first, ratio, n):
-        """سری هندسی"""
         return [first * (ratio ** i) for i in range(n)]
 
 def main():
@@ -48,23 +43,19 @@ def main():
     series = AdvancedSeries()
 
     try:
-        # دنباله فیبوناچی
         n_fib = int(input("تعداد جملات فیبوناچی: "))
         fib_seq = series.fibonacci(n_fib)
         print(f"دنباله فیبوناچی: {fib_seq}")
 
-        # تحلیل فیبوناچی
         if len(fib_seq) >= 3:
             ratios = [fib_seq[i] / fib_seq[i-1] for i in range(2, len(fib_seq))]
             print(f"نسبت‌های متوالی: {ratios}")
             print(f"میانگین نسبت‌ها: {np.mean(ratios):.6f} (نزدیک به نسبت طلایی)")
 
-        # اعداد کامل
         limit = int(input("\nحد بالای جستجوی اعداد کامل: "))
         perfect_nums = series.perfect_numbers(limit)
         print(f"اعداد کامل تا {limit}: {perfect_nums}")
 
-        # سری‌های حسابی و هندسی
         print("\n--- سری‌های ریاضی ---")
         a1 = float(input("جمله اول: "))
         diff = float(input("تفاضل/نسبت: "))
@@ -76,7 +67,6 @@ def main():
         print(f"سری حسابی: {arith_seq}")
         print(f"سری هندسی: {geo_seq}")
 
-        # ایجاد جدول مقایسه
         comparison_data = []
         for i in range(n_terms):
             comparison_data.append({

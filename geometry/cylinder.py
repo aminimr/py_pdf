@@ -7,7 +7,6 @@ import math
 
 
 def calculate_cylinder_properties(radius, height):
-    """محاسبه حجم و مساحت جانبی استوانه"""
     volume = math.pi * radius ** 2 * height
     surface_area = 2 * math.pi * radius * (radius + height)
     return volume, surface_area
@@ -23,7 +22,6 @@ def main():
         print(f"حجم استوانه: {volume:.2f}")
         print(f"مساحت سطح استوانه: {surface_area:.2f}")
 
-        # ایجاد دیتافریم با pandas
         import pandas as pd
         data = {
             'Property': ['Radius', 'Height', 'Volume', 'Surface Area'],

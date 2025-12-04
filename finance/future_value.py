@@ -21,7 +21,6 @@ def main():
         fv = future_value(principal, rate, years)
         print(f"ارزش آتی: {fv:,.0f}")
 
-        # تحلیل سال به سال
         yearly_growth = []
         for year in range(1, years + 1):
             value = future_value(principal, rate, year)
@@ -35,7 +34,6 @@ def main():
         print("\nرشد سال به سال:")
         print(growth_df.to_string(index=False))
 
-        # مقایسه با نرخ‌های مختلف
         rates = [rate * 0.5, rate, rate * 1.5, rate * 2]
         comparison = []
 
